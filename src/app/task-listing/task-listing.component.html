@@ -1,0 +1,60 @@
+<div class="app-container">
+    <form (submit)="onSubmit()" class="app-container__form">
+      <h1 class="app-container__title">Task Tracker</h1>
+      <label for="title">Title:</label>
+      <input
+        type="text"
+        id="title"
+        name="title"
+        [(ngModel)]="newTask.taskTitle"
+        required
+      />
+  
+      <label for="description">Description:</label>
+      <input
+        type="text"
+        id="description"
+        name="description"
+        [(ngModel)]="newTask.description"
+        required
+      />
+  
+      <button type="submit">Add Task</button>
+    </form>
+  
+  
+    <div class="app-container__task-tiles">
+      <h1 class="app-container__title-tasks">Tasks</h1>
+  
+      @for (task of taskDetailsArray; track $index) {
+      <div class="app-container__task">
+        <input
+          type="text"
+          class="app-container__display-title"
+          [ngClass]="{ 'app-container__display-edit': $index == selectedIndex }"
+          [(ngModel)]="task.taskTitle"
+          [readonly]="isReadOnly || $index !== selectedIndex"
+        />
+  
+        <input
+          type="text"
+          class="app-container__display-description"
+          [ngClass]="{ 'app-container__display-edit': $index == selectedIndex }"
+          [(ngModel)]="task.description"
+          [readonly]="isReadOnly || $index !== selectedIndex"
+        />
+  
+        <div>
+          <button (click)="toggleEdit($index)">
+            {{ isReadOnly || $index !== selectedIndex ? "Update" : "Save" }}
+          </button>
+          <button (click)="deleteTask($index)">Delete</button>
+        </div>
+      </div>
+      }@empty {
+        <p class="app-container__empty">No task added</p>
+      }
+  
+    </div>
+  </div>
+  

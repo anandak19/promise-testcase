@@ -1,0 +1,128 @@
+.app-container {
+    background-color: #f0f0f0;
+    width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px #0000001a;
+  
+    &__form {
+      margin-bottom: 20px;
+      padding: 20px 38px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px #0000001a;
+      display: flex;
+      flex-direction: column;
+  
+      label {
+        font-weight: bold;
+        color: #333333;
+        margin-bottom: 8px;
+      }
+  
+      input[type='text'] {
+        box-sizing: border-box;
+        width: 100%;
+        padding: 8px 14px 8px 14px;
+        font-size: 16px;
+        margin-bottom: 16px;
+        border: 1px solid #cccccc;
+        outline-color: #00bfff;
+        border-radius: 20px;
+      }
+
+      button {
+        padding: 10px 0px;
+        width: 100%;
+        background-color: #001adc;
+        color: #ffffff;
+        border: none;
+        border-radius: 30px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 18px;
+  
+        &:hover {
+          background-color: #1f39ff;
+        }
+      }
+    }
+    &__title{
+        font-size: 28px;
+        color: #333333;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+  
+    &__task-tiles {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    &__task{
+      background-color: #ffffff;
+      padding: 8px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px #0000001a;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      transition: all .3s;
+
+      &:hover{
+        transform: translateY(-4px);
+      }
+
+      input[type='text'] {
+        width: calc(100% - 120px);
+        padding: 4px;
+        outline: none;
+        border-radius: 4px;
+      }
+
+      button {
+        padding: 6px 12px;
+        background-color: #1f38f5;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        font-size: 14px;
+        margin: 6px 0 4px 10px;
+
+        &:hover {
+          background-color: #0019d4;
+        }
+      }
+    }
+
+    &__display-title{
+      text-align: center;
+      font-weight: 700;
+      font-size: 22px;
+      color: #000c69;
+    }
+
+    &__display-description{
+      text-align: center;
+      font-size: 16px;
+      color: #000c69;
+    }
+    &__display-edit{
+      border: 1px dotted #006a8e;
+    }
+    &__title-tasks{
+      font-size: 22px;
+      color: #333333;
+      text-align: center;
+    }
+    &__empty{
+      text-align: center;
+      font-style: italic;
+      color: #535353;
+    }
+  }
+  
